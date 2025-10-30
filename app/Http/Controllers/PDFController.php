@@ -124,7 +124,7 @@ class PDFController extends Controller
         $officePath = storage_path('app/public/' . $officeFilename);
 
         $officePdf = new Pdf($templatePath);
-        $officePdf->getCommand()->setCommand('C:\\Program Files (x86)\\PDFtk Server\\bin\\pdftk.exe');
+        $officePdf->getCommand()->setCommand(base_path('PDFtk Server/bin/pdftk.exe'));
 
         $officeResult = $officePdf->fillForm($officeData)
             ->flatten()
@@ -142,7 +142,7 @@ class PDFController extends Controller
         $customerPath = storage_path('app/public/' . $customerFilename);
 
         $customerPdf = new Pdf($templatePath);
-        $customerPdf->getCommand()->setCommand('C:\\Program Files (x86)\\PDFtk Server\\bin\\pdftk.exe');
+        $customerPdf->getCommand()->setCommand(base_path('PDFtk Server/bin/pdftk.exe'));
 
         $customerResult = $customerPdf->fillForm($customerData)
             ->flatten()
